@@ -1,0 +1,20 @@
+# AWS Configuration
+aws_region = "ap-south-1"
+
+# Project Configuration
+project_name = "invoice-ninja"
+environment  = "production"
+
+# EC2 Configuration
+instance_type    = "t2.small"
+ebs_volume_size  = 8
+public_key_path  = "~/.ssh/id_rsa.pub"
+ssh_cidr         = "0.0.0.0/0"  # Change this to your IP for better security
+
+# Database Configuration
+db_password = "your_secure_database_password_here"
+
+# Application Configuration
+app_key     = "your_laravel_app_key_here"
+app_url     = "http://your-domain.com"
+domain_name = "your-domain.com" 

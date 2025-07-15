@@ -178,3 +178,6 @@ For further information on responsible disclosure please read [here](https://che
 ## License
 Invoice Ninja is released under the Elastic License.  
 See [LICENSE](LICENSE) for details.
+
+#Createa account 
+php artisan ninja:create-account --email=admin@mycompany.com --password=SuperSecret123

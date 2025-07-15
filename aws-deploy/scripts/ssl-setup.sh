@@ -68,6 +68,7 @@ fi
 # Install certbot if not already installed
 if ! command -v certbot &> /dev/null; then
     log "Installing certbot..."
+    sudo dnf clean all
     dnf install -y certbot python3-certbot-nginx
 fi
 

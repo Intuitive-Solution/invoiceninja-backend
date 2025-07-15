@@ -395,4 +395,36 @@ The fastest way to resolve this right now:
    ./deploy.sh --mode app-only
    ```
 
+## Ngix config file location
+ /etc/nginx/conf.d/invoiceninja.conf
+
+## reload Nginx
+sudo nginx -t
+sudo systemctl reload nginx
+
+## Restart PHP
+php artisan config:clear && \
+php artisan config:cache && \
+php artisan cache:clear && \
+php artisan route:clear && \
+php artisan view:clear && \
+php artisan queue:restart
+
+
+#### cron tab
+
+## Install cron tab
+sudo dnf install cronie -y
+sudo systemctl start crond
+sudo systemctl enable crond
+
+
+# Check if it's running
+sudo systemctl status crond
+
+# cron job
+* * * * * /usr/bin/php /var/www/html/artisan schedule:run >> /dev/null 2>&1
+
 This should resolve the corrupted package cache issue and allow the installation to proceed. 
+
+
